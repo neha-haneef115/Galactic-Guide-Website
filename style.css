@@ -1,0 +1,306 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color:#ffb900;
+    --text-color: #FFFFFF;
+    --text-color2: #000000;
+}
+
+body {
+    font-family: sans-serif;
+    color: #444444;
+}
+
+section {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: #111111;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.banner.active {
+    right: 300px;
+}
+
+.headers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 1.1rem 3%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 1000;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-top: -25px;
+}
+
+.header .nav-logo .nav-heading {
+    color: #fff;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 26px;
+    padding: 0;
+    text-decoration: none;
+}
+
+.header .nav-logo .nav-heading span{
+    color: var(--primary-color);
+    font-weight: 700;
+}
+#menu-btn{
+    display: none;
+}
+
+.header .nav-logo img {
+    padding-top: 10px;
+    height: 60px;
+    width: 50px;
+}
+
+nav {
+    text-align: center;
+    margin-left: 220px;
+    font-size: 16px;
+    margin-top: 2rem;
+}
+
+.navbar {
+    z-index: -1;
+    transform: translateY(-100%);
+    transition: 0.5s;
+}
+
+.navbar.open {
+    transform: translateY(0);
+}
+
+.headers .navbar a {
+    align-items: left;
+    text-decoration: none;
+    color: #fff;
+    margin-left: 10px;
+    margin: 0 0.6rem;
+}
+
+.headers .navbar a:hover {
+    color: var(--primary-color);
+    border-bottom: .1rem solid;
+    padding-bottom: .3rem;
+}
+
+.nav-menu-btn {
+    position: absolute;
+    font-size: 1.5rem;
+    color: #fff;
+    display: block;
+    cursor: pointer;
+}
+
+.nav-btn {
+    display: none;
+}
+
+section.banner video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.banner::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, #3d3dd4, #ca0808);
+    mix-blend-mode: overlay;
+}
+
+section .text {
+    position: relative;
+    z-index: 10;
+}
+
+section .text h2 {
+    font-size: 3em;
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.1em;
+    text-transform: uppercase;
+}
+section .text h2 span{
+    color: var(--primary-color);
+    
+
+
+}
+section .text h3 {
+    font-size: 2em;
+    color: #fff;
+    font-weight: 550;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+section .text p {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    margin: 20px 0;
+    line-height: 1.2em;
+    font-weight: 400;
+    max-width: 550px;
+}
+
+section .text .header-btn {
+    font-size: 1.1em;
+    color: #111111;
+    padding: 0.75rem 1.5rem;
+    outline: none;
+    border: none;
+    white-space: nowrap;
+    font-size: 1rem;
+    background-color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+section .text .header-btn:hover {
+    background: var(--primary-color);
+    transform: scale(1.1);
+}
+
+section .social {
+    position: absolute;
+    z-index: 10;
+    bottom: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section .social a:hover{
+    background: var(--primary-color);
+}
+
+section .social a {
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    line-height: 2rem;
+    font-size: 1.2rem;
+    color: #fff;
+    border: .1rem solid;
+    margin: .3rem;
+    border-radius: 50%;
+    align-items: center;
+}
+
+@media (max-width: 991px) {
+    .headers {
+        padding-top: 25px;
+        flex-direction: column;
+        align-items: flex-end; 
+    }
+    section .text{
+        margin-left: -46px;
+    }
+    section .social{
+        margin-left: -46px;
+    }
+
+    section .text h2 {
+        font-size: 34px;
+        white-space: nowrap;
+        word-spacing: 10px; 
+    }
+
+    section .text h3 {
+        font-size: 20px;
+        line-height: 2rem;
+    }
+
+    .header {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .nav-logo {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-menu-btn {
+        position: absolute;
+        top: 1rem;
+        display: inline !important;
+        right: 1rem;
+        font-size: 2rem;
+        color: #fff;
+        cursor: pointer;
+        z-index: 1000; 
+    }
+
+    .navbar {
+        transform: translate(13em);
+        position: absolute;
+        top: 100%; 
+        right: -100%; 
+        background: #ffffff; 
+        width: 30rem;
+        height: calc(100vh - 3.9rem);  
+        transition: right 0.5s; 
+        z-index: 999;
+    }
+
+    .navbar.active {
+        right: 0;
+    }
+
+    .navbar a {
+        
+        text-align: left;
+        position:relative ;
+        color:black !important;
+        display: block;
+        margin: 1.5rem;
+        font-size: 20px !important;
+        font-weight: 400 !important;
+        padding: 1.3rem;
+        font-size: 2rem;
+        text-decoration: none;
+    }
+
+    .navbar a:hover {
+        color: var(--primary-color) !important;
+    }
+    #menu-btn:hover{
+        color:var(--primary-color)
+    }
+}
